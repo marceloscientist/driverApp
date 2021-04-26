@@ -1,0 +1,5 @@
+class CreateSpecificationController {
+
+}
+
+export { CreateSpecificationController }

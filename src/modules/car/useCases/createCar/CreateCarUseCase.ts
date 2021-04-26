@@ -1,11 +1,11 @@
-import { ICarRepository } from "../repositories/ICarRepository";
+import { ICarRepository } from "../../repositories/ICarRepository";
 
 interface IRequest {
     name: string;
     brand: string;
 }
 
-class CreateCarService {
+class CreateCarUseCase {
     constructor(private carsRepository: ICarRepository) { }
 
     execute({name, brand}:IRequest):void {
@@ -17,4 +17,4 @@ class CreateCarService {
     }
 }
 
-export { CreateCarService }
+export { CreateCarUseCase }
