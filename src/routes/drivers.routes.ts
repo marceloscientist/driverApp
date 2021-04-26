@@ -1,16 +1,13 @@
 import { Router } from "express";
 import { DriversRepository } from "../modules/driver/repositories/DriversRepository"
-import { CreateDriverService } from "../modules/driver/service/CreateDriverService";
 import { ListDriversService } from "../modules/driver/service/ListDriversService";
+import { createDriverController } from "../modules/driver/useCases";
 
 const driversRouters = Router();
 const driversRepository = new DriversRepository();
 
 driversRouters.post('/',(request, response)=>{
-    const { name, age, cpf } = request.body;
-    const createDriverService = new CreateDriverService(driversRepository);
-    createDriverService.execute({name, age, cpf});
-    return response.status(201).send();
+    createDriverController.handle(request, response)
 })
 
 driversRouters.get('/',(request, response)=>{

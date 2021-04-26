@@ -7,7 +7,7 @@ interface IRequest {
 }
 
 
-class CreateDriverService {
+class CreateDriverUseCase {
   constructor(private iDriverRepository: IDriversRepository) {}
   execute({ name, age, cpf }:IRequest) {
     const driverAlreadyExists = this.iDriverRepository.findByName(name);
@@ -18,4 +18,4 @@ class CreateDriverService {
   }
 }
 
-export { CreateDriverService };
+export { CreateDriverUseCase };

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createCarController = void 0;
+var CarsRepository_1 = require("../../repositories/CarsRepository");
+var CreateCarUseCase_1 = require("../../useCases/createCar/CreateCarUseCase");
+var CreateCarController_1 = require("../../useCases/createCar/CreateCarController");
+var carsRepository = new CarsRepository_1.CarsRepository();
+var createCarUseCase = new CreateCarUseCase_1.CreateCarUseCase(carsRepository);
+var createCarController = new CreateCarController_1.CreateCarController(createCarUseCase);
+exports.createCarController = createCarController;
