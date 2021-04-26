@@ -1,4 +1,4 @@
-import { IDriversRepository } from "../repositories/IDriverRepository";
+import { IDriversRepository } from "../../repositories/IDriverRepository";
 
 interface IRequest {
   name: string;

@@ -1,10 +1,10 @@
-import { ISpecificationRepository } from "../repositories/ISpecificationRepository";
+import { ISpecificationRepository } from "../../repositories/ISpecificationRepository";
 
-class ListSpecificationService {
+class ListSpecificationUseCase {
     constructor(private iSpecificationRepository: ISpecificationRepository) { }
     execute() {
         return this.iSpecificationRepository.list();
     }
 }
 
-export { ListSpecificationService }
+export { ListSpecificationUseCase }

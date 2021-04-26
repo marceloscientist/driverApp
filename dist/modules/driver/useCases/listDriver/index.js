@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.listDriverController = void 0;
+var DriversRepository_1 = require("../../repositories/DriversRepository");
+var ListDriverController_1 = require("./ListDriverController");
+var ListDriverUseCase_1 = require("./ListDriverUseCase");
+var driversRepository = new DriversRepository_1.DriversRepository();
+var listDriverUseCase = new ListDriverUseCase_1.ListDriverUseCase(driversRepository);
+var listDriverController = new ListDriverController_1.ListDriverController(listDriverUseCase);
+exports.listDriverController = listDriverController;

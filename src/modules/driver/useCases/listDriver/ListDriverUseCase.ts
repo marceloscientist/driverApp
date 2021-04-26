@@ -1,10 +1,10 @@
-import { IDriversRepository } from "../repositories/IDriverRepository";
+import { IDriversRepository } from "../../repositories/IDriverRepository";
 
-class ListDriversService {
+class ListDriverUseCase {
     constructor(private iDriverRepository: IDriversRepository) { }
     execute() {
         return this.iDriverRepository.list();
     }
 }
 
-export { ListDriversService }
+export { ListDriverUseCase }

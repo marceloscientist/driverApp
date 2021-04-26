@@ -1,10 +1,10 @@
-import { ICategoryRepository } from "../repositories/ICategoryRepository";
+import { ICategoryRepository } from "../../repositories/ICategoryRepository";
 
-class ListCategoriesService {
+class ListCategoryUseCase {
     constructor(private iCategoryRepository: ICategoryRepository) { }
     execute() {
         return this.iCategoryRepository.list();
     }
 }
 
-export { ListCategoriesService }
+export { ListCategoryUseCase }

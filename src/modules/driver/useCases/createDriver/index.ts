@@ -1,4 +1,4 @@
-import { DriversRepository } from "../repositories/DriversRepository";
+import { DriversRepository } from "../../repositories/DriversRepository";
 import { CreateDriverController } from "./CreateDriverController";
 import { CreateDriverUseCase } from "./CreateDriverUseCase";
 
