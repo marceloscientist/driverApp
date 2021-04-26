@@ -1,18 +1,21 @@
 import { Router } from "express";
 import { DriversRepository } from "../repositories/DriversRepository"
+import { CreateDriverService } from "../service/CreateDriverService";
+import { ListDriversService } from "../service/ListDriversService";
 
 const driversRouters = Router();
 const driversRepository = new DriversRepository();
 
 driversRouters.post('/',(request, response)=>{
     const { name, age, cpf } = request.body;
-    driversRepository.create({name, age, cpf});
+    const createDriverService = new CreateDriverService(driversRepository);
+    createDriverService.execute({name, age, cpf});
     return response.status(201).send();
 })
 
 driversRouters.get('/',(request, response)=>{
-    const all = driversRepository.list();
-    return response.json(all);
+    const listDriversService = new ListDriversService(driversRepository);
+    return response.json(listDriversService);
 })
 
 export { driversRouters }

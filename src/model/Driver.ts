@@ -4,10 +4,10 @@ class Driver {
 /**
  *
  */
-    private id?: string;
-    private name: string;
-    private age: number;
-    private cpf: string; 
+    id?: string;
+    name: string;
+    age: number;
+    cpf: string; 
 
     constructor() {
         if(!this.id) {

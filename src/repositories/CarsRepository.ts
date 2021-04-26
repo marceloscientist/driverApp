@@ -23,7 +23,7 @@ class CarsRepository implements ICarRepository {
     }
 
     findByName(name:string):Car {
-        const car = this.cars.find(name => name === name) 
+        const car = this.cars.find(car => car.name === name) 
         return car
     } 
 }

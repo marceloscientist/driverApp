@@ -1,12 +1,7 @@
 import { Driver } from '../model/Driver';
+import { IDriverDTO, IDriversRepository } from './IDriverRepository';
 
-interface IDriverDTO {
-    name: string;
-    age: number;
-    cpf: string;
-}
-
-class DriversRepository {
+class DriversRepository implements IDriversRepository {
 
     private drivers: Driver[];
 
@@ -26,6 +21,11 @@ class DriversRepository {
 
     list():Driver[] {
         return this.drivers;
+    }
+
+    findByName(name:string):Driver {
+        const driver = this.drivers.find(driver => driver.name === name)
+        return driver;
     }
 }
 
