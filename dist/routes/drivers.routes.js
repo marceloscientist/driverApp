@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.driversRouters = void 0;
 var express_1 = require("express");
-var DriversRepository_1 = require("../repositories/DriversRepository");
-var CreateDriverService_1 = require("../service/CreateDriverService");
-var ListDriversService_1 = require("../service/ListDriversService");
+var DriversRepository_1 = require("../modules/driver/repositories/DriversRepository");
+var CreateDriverService_1 = require("../modules/driver/service/CreateDriverService");
+var ListDriversService_1 = require("../modules/driver/service/ListDriversService");
 var driversRouters = express_1.Router();
 exports.driversRouters = driversRouters;
 var driversRepository = new DriversRepository_1.DriversRepository();

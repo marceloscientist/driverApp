@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { DriversRepository } from "../repositories/DriversRepository"
-import { CreateDriverService } from "../service/CreateDriverService";
-import { ListDriversService } from "../service/ListDriversService";
+import { DriversRepository } from "../modules/driver/repositories/DriversRepository"
+import { CreateDriverService } from "../modules/driver/service/CreateDriverService";
+import { ListDriversService } from "../modules/driver/service/ListDriversService";
 
 const driversRouters = Router();
 const driversRepository = new DriversRepository();

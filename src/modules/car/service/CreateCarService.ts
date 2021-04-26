@@ -1,9 +1,14 @@
 import { ICarRepository } from "../repositories/ICarRepository";
 
+interface IRequest {
+    name: string;
+    brand: string;
+}
+
 class CreateCarService {
     constructor(private carsRepository: ICarRepository) { }
 
-    execute(name, brand) {
+    execute({name, brand}:IRequest):void {
         const carAlreadyExist = this.carsRepository.findByName(name)
         if(carAlreadyExist) {
             throw new Error("Car Already Exist");
