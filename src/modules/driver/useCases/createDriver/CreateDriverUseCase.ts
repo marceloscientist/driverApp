@@ -8,13 +8,14 @@ interface IRequest {
 
 
 class CreateDriverUseCase {
-  constructor(private iDriverRepository: IDriversRepository) {}
-  execute({ name, age, cpf }:IRequest) {
-    const driverAlreadyExists = this.iDriverRepository.findByName(name);
+  constructor(private driverRepository: IDriversRepository) {}
+
+  execute({ name, age, cpf }:IRequest):void {
+    const driverAlreadyExists = this.driverRepository.findByName(name)
     if (driverAlreadyExists) {
       throw new Error("Driver already Exists");
     }
-    this.iDriverRepository.create({ name, age, cpf });
+    this.driverRepository.create({ name, age, cpf });
   }
 }
 

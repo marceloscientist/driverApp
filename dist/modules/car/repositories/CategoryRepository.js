@@ -6,6 +6,12 @@ var CategoryRepository = /** @class */ (function () {
     function CategoryRepository() {
         this.categories = [];
     }
+    CategoryRepository.getInstance = function () {
+        if (!CategoryRepository.INSTANCE) {
+            CategoryRepository.INSTANCE = new CategoryRepository();
+        }
+        return CategoryRepository.INSTANCE;
+    };
     CategoryRepository.prototype.create = function (_a) {
         var name = _a.name, description = _a.description;
         var category = new Category_1.Category();

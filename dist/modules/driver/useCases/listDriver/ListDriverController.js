@@ -6,8 +6,7 @@ var ListDriverController = /** @class */ (function () {
         this.listDriverUseCase = listDriverUseCase;
     }
     ListDriverController.prototype.handle = function (request, response) {
-        var all = this.listDriverUseCase.execute();
-        return response.json(all);
+        return response.json(this.listDriverUseCase.execute());
     };
     return ListDriverController;
 }());

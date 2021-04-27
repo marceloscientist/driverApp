@@ -6,6 +6,12 @@ var SpecificationRepository = /** @class */ (function () {
     function SpecificationRepository() {
         this.specifications = [];
     }
+    SpecificationRepository.getInstance = function () {
+        if (!SpecificationRepository.INSTANCE) {
+            SpecificationRepository.INSTANCE = new SpecificationRepository();
+        }
+        return SpecificationRepository.INSTANCE;
+    };
     SpecificationRepository.prototype.create = function (_a) {
         var name = _a.name, description = _a.description;
         var specification = new Specification_1.Specification();

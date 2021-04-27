@@ -1,8 +1,8 @@
-import { DriversRepository } from "../../repositories/DriversRepository";
+import { DriversRepository } from "../../repositories/Implementations/DriversRepository";
 import { ListDriverController } from "./ListDriverController";
 import { ListDriverUseCase } from "./ListDriverUseCase";
 
-const driversRepository = new DriversRepository()
+const driversRepository = DriversRepository.getInstance()
 const listDriverUseCase = new ListDriverUseCase(driversRepository)
 const listDriverController = new ListDriverController(listDriverUseCase)
 

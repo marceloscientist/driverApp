@@ -4,8 +4,14 @@ exports.DriversRepository = void 0;
 var Driver_1 = require("../model/Driver");
 var DriversRepository = /** @class */ (function () {
     function DriversRepository() {
-        var drivers = [];
+        this.drivers = [];
     }
+    DriversRepository.getInstance = function () {
+        if (!DriversRepository.INSTANCE) {
+            DriversRepository.INSTANCE = new DriversRepository();
+        }
+        return DriversRepository.INSTANCE;
+    };
     DriversRepository.prototype.create = function (_a) {
         var name = _a.name, age = _a.age, cpf = _a.cpf;
         var driver = new Driver_1.Driver();

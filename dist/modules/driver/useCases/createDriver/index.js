@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createDriverController = void 0;
-var DriversRepository_1 = require("../../repositories/DriversRepository");
+var DriversRepository_1 = require("../../repositories/Implementations/DriversRepository");
 var CreateDriverController_1 = require("./CreateDriverController");
 var CreateDriverUseCase_1 = require("./CreateDriverUseCase");
-var driversRepository = new DriversRepository_1.DriversRepository();
+var driversRepository = DriversRepository_1.DriversRepository.getInstance();
 var createDriverUseCase = new CreateDriverUseCase_1.CreateDriverUseCase(driversRepository);
 var createDriverController = new CreateDriverController_1.CreateDriverController(createDriverUseCase);
 exports.createDriverController = createDriverController;

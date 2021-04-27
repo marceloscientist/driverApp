@@ -1,8 +1,8 @@
-import { CarsRepository } from "../../repositories/CarsRepository";
+import { CarsRepository } from "../../repositories/Implementations/CarsRepository";
 import { ListCarController } from "./ListCarController";
 import { ListCarUseCase } from "./ListCarUseCase";
 
-const carsRepository = new CarsRepository()
+const carsRepository = CarsRepository.getInstance();
 const listCarUseCase = new ListCarUseCase(carsRepository)
 const listCarController = new ListCarController(listCarUseCase)
 

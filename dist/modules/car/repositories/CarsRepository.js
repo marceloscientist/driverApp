@@ -6,6 +6,12 @@ var CarsRepository = /** @class */ (function () {
     function CarsRepository() {
         this.cars = [];
     }
+    CarsRepository.getInstance = function () {
+        if (!CarsRepository.INSTANCE) {
+            CarsRepository.INSTANCE = new CarsRepository();
+        }
+        return CarsRepository.INSTANCE;
+    };
     CarsRepository.prototype.create = function (_a) {
         var name = _a.name, brand = _a.brand;
         var car = new Car_1.Car();

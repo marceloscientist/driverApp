@@ -1,12 +1,19 @@
-import { Driver } from '../model/Driver';
-import { IDriverDTO, IDriversRepository } from './IDriverRepository';
+import { Driver } from '../../model/Driver';
+import { IDriverDTO, IDriversRepository } from '../IDriverRepository';
 
 class DriversRepository implements IDriversRepository {
-
     private drivers: Driver[];
+    private static INSTANCE: DriversRepository
 
-    constructor() {
-        const drivers = [];      
+    private constructor() {
+        this.drivers = [];      
+    }
+
+    public static getInstance(): DriversRepository {
+        if(!DriversRepository.INSTANCE) {
+            DriversRepository.INSTANCE = new DriversRepository()
+        }
+        return DriversRepository.INSTANCE
     }
 
     create({name, age, cpf}:IDriverDTO):void {
